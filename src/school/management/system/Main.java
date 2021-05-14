@@ -2,11 +2,43 @@ package school.management.system;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 
 public class Main {
     public static void main(String[] args) {
-        Teacher lizzy=new Teacher(1, "Lizzy", 5000);
+
+        Scanner scanner = new Scanner(System.in);
+        String name;
+        int id = 0;
+        int salary = 0;
+        Teacher teacher;
+
+
+        List<Teacher> teacherList = new ArrayList<>();
+
+
+        for (int i = 0; i < 2; i ++){
+
+            System.out.print( "Nombre:");
+            name = scanner.next();
+
+
+            System.out.print( "Id:");
+            id = scanner.nextInt();
+
+            System.out.print( "Salario:");
+            salary = scanner.nextInt();
+            System.out.println();
+
+            teacher = new Teacher(id, name, salary);
+            teacherList.add(teacher);
+
+
+        }
+
+        System.out.println(teacherList.get(0).toString());
+       /* Teacher lizzy=new Teacher(1, "Lizzy", 5000);
         Teacher mellisa=new Teacher (2,"Mellisa", 7000);
         Teacher vanderhorn=new Teacher(3, "Vanderhorn", 6000);
 
@@ -37,6 +69,7 @@ public class Main {
         System.out.println("GHS has spent for salary to"+ vanderhorn.getName()
                 +" and now has"+ghs.getTotalMoneyEarned());
         System.out.println(rakshith);
+        */
     }
 
 }
